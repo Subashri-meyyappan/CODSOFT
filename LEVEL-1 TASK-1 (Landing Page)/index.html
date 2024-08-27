@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Brand Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Inline CSS for quick adjustments, ideally moved to external styles.css */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            border-bottom: 4px solid #ff22ff;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        header ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        header ul li {
+            margin: 0 15px;
+        }
+
+        header ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 15px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        header ul li a:hover {
+            background: #ff22e5;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .cta-button {
+            background: #ff22f4;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #e619b3;
+        }
+
+        .hero {
+    background: url('https://assets-global.website-files.com/6026c3a5020cc79ec8d676ba/6153dd4d8aedf358e903c922_header-Ecommerce-Landing-Pages.png') no-repeat center center/cover;
+    color: #fff;
+    height: 250px; /* Reduced height for a smaller section */
+    width: 100%; /* Ensures it spans the full width */
+    max-width: 100%; /* Limits the maximum width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px; /* Smaller padding for a more compact feel */
+    border-radius: 10px; /* Added rounded corners for a sleek look */
+    margin: 20px auto; /* Centered the hero with some vertical spacing */
+}
+
+
+
+        .hero h2 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .cta-btn {
+            background: #ff7a59;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #e619ce;
+            transform: scale(1.05);
+        }
+
+        .about-section {
+    background: #f4f4f4;
+    padding: 20px 10px; /* Reduced padding */
+    text-align: center;
+}
+
+.about-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Slightly reduced border-radius */
+    margin-bottom: 15px; /* Reduced margin */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2); /* Reduced shadow size */
+}
+
+.about-section h2 {
+    font-size: 24px; /* Reduced font size */
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.about-section p {
+    font-size: 14px; /* Reduced font size */
+    max-width: 600px; /* Reduced max-width */
+    margin: 0 auto;
+}
+
+.services-section {
+    background: #ff22c0;
+    color: #fff;
+    padding: 20px 10px; /* Further reduced padding */
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 24px; /* Further reduced font size */
+    margin-bottom: 15px; /* Further reduced margin */
+}
+
+.service-box {
+    display: flex;
+    justify-content: center; /* Centered items for a more compact layout */
+    flex-wrap: wrap;
+    gap: 10px; /* Added gap for spacing between items */
+}
+
+.service-box div {
+    background: #fff;
+    color: #333;
+    border-radius: 8px; /* Further reduced border-radius */
+    padding: 10px; /* Further reduced padding */
+    width: 90%; /* Adjusted width to fit in a smaller container */
+    max-width: 280px; /* Maximum width to control size */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Kept the reduced shadow size */
+    margin-bottom: 10px; /* Further reduced margin */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box div:hover {
+    transform: translateY(-5px); /* Further reduced transform */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Further reduced shadow on hover */
+}
+
+.service-box div h3 {
+    font-size: 18px; /* Further reduced font size */
+    margin-bottom: 8px; /* Further reduced margin */
+}
+
+.service-box div p {
+    font-size: 12px; /* Further reduced font size */
+}
+
+.featured-products {
+    padding: 20px 10px; /* Reduced padding */
+    background: #fff;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 24px; /* Reduced font size */
+    margin-bottom: 20px; /* Reduced margin */
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center; /* Centered items for a more compact layout */
+    flex-wrap: wrap;
+    gap: 10px; /* Added gap for spacing between items */
+}
+
+.product-item {
+    background: #fff;
+    border-radius: 8px; /* Reduced border-radius */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1); /* Reduced shadow size */
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 90%; /* Adjusted width to fit in a smaller container */
+    max-width: 250px; /* Maximum width to control size */
+    margin-bottom: 20px; /* Reduced margin */
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd; /* Reduced border size */
+}
+
+.product-item h3 {
+    font-size: 18px; /* Reduced font size */
+    margin: 15px 0; /* Reduced margin */
+}
+
+.product-item p {
+    font-size: 14px; /* Reduced font size */
+    color: #555;
+    margin-bottom: 8px; /* Reduced margin */
+}
+
+.price {
+    font-size: 16px; /* Reduced font size */
+    color: #ff22c0;
+    font-weight: bold;
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.product-item button {
+    background: #ff22d3;
+    color: #fff;
+    border: none;
+    padding: 8px 15px; /* Reduced padding */
+    border-radius: 20px; /* Reduced border-radius */
+    font-size: 14px; /* Reduced font size */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.product-item button:hover {
+    background: #e619c0;
+    transform: scale(1.05);
+}
+
+
+.testimonials-section {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial-item {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 0 auto;
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.testimonial-item p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.testimonial-item .author {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.newsletter-section {
+    background: #f822ff;
+    color: #fff;
+    padding: 30px 15px; /* Reduced padding for a smaller section */
+    text-align: center;
+    border-radius: 8px; /* Added rounded corners for a smoother look */
+    max-width: 100%; /* Ensures it fits within the container */
+    margin: 20px auto; /* Centers the section with some vertical spacing */
+}
+
+.newsletter-section h2 {
+    font-size: 24px; /* Reduced font size for a smaller headline */
+    margin-bottom: 15px; /* Reduced margin for tighter spacing */
+}
+
+.newsletter-section p {
+    font-size: 16px; /* Slightly smaller font for the paragraph */
+    margin-bottom: 20px; /* Reduced margin for tighter spacing */
+}
+
+
+.signup-form input[type="email"] {
+    padding: 15px; border: none; border-radius: 25px; 
+    width: 300px; font-size: 16px; margin-right: 10px;
+}
+.signup-form input[type="submit"] {
+    background: #fff; color: #ff22c8; border: none; 
+    padding: 15px 30px; border-radius: 25px; 
+    cursor: pointer; font-size: 16px; 
+    transition: background 0.3s ease;
+}
+.signup-form input[type="submit"]:hover {
+    background: #e619e6; color: #fff;
+}
+
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <h1>FashionBrand</h1>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#featured-products">Featured Products</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                </ul>
+                <a href="#cart" class="cta-button" id="cart-button">Cart (0)</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div>
+            <h2>Welcome to FashionBrand</h2>
+            <p>Discover the latest trends and timeless styles. Shop now to enhance your wardrobe with the finest fashion pieces.</p>
+            <a href="#featured-products" class="cta-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At FashionBrand, we are dedicated to providing you with the highest quality fashion products. Our collections are curated with care to ensure you always look and feel your best. Explore our story and see what makes us unique.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-box">
+                <div>
+                    <h3>Personal Styling</h3>
+                    <p>Receive expert styling advice tailored to your personal taste and needs.</p>
+                </div>
+                <div>
+                    <h3>Free Shipping</h3>
+                    <p>Enjoy complimentary shipping on orders over $50, delivered right to your doorstep.</p>
+                </div>
+                <div>
+                    <h3>Easy Returns</h3>
+                    <p>Return your purchases within 30 days for a hassle-free refund or exchange.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    
+    
+    <div class="product-grid">
+        <div class="product-item">
+            <img src="https://media.croma.com/image/upload/v1682593189/Croma%20Assets/Entertainment/Headphones%20and%20Earphones/Images/256351_0_udbput.png" alt="Bluetooth Earbuds">
+            <h3>Bluetooth Earbuds</h3>
+            <p>High-quality sound with a long battery life.</p>
+            <div class="price">$69.99</div>
+            <button onclick="addToCart('Bluetooth Earbuds', 69.99)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="https://ae01.alicdn.com/kf/HTB1uiy7KVXXXXXgXXXXq6xXFXXXG/2015-comfortable-running-shoes-super-light-sneakers-wearable-men-athletic-shoes-brand-sport-shoes-running-men.jpg" alt="Sporty Sneakers">
+            <h3>Sporty Sneakers</h3>
+            <p>Durable and perfect for running.</p>
+            <div class="price">$79.99</div>
+            <button onclick="addToCart('Sporty Sneakers', 79.99)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="https://i.pinimg.com/originals/7a/cf/9d/7acf9dc3d49b007c4d4887126c7c4178.png" alt="Stylish Sunglasses">
+            <h3>Stylish Sunglasses</h3>
+            <p>UV protection with a modern look.</p>
+            <div class="price">$39.99</div>
+            <button onclick="addToCart('Stylish Sunglasses', 39.99)">Add to Cart</button>
+        </div>
+        
+        <div class="product-item">
+            <img src="https://media.endclothing.com/media/catalog/product/0/8/08-11-2-2022_SI_207887-4HQ_m1_1.jpg" alt="Crocs">
+            <h3>Crocs</h3>
+            <p>Comfortable and stylish.</p>
+            <div class="price">$89.99</div>
+            <button onclick="addToCart('Crocs', 89.99)">Add to Cart</button>
+        </div>
+        
+        <div class="product-item">
+            <img src="http://i1.adis.ws/i/truworths/prod3061473_1.jpeg" alt="Elegant Dress">
+            <h3>Elegant Dress</h3>
+            <p>Perfect dress for any occasion.</p>
+            <div class="price">$129.99</div>
+            <button onclick="addToCart('Elegant Dress', 129.99)">Add to Cart</button>
+        </div>
+    
+        <div class="product-item">
+            <img src="https://www.explodyfull.com/wp-content/uploads/2018/09/trendy-Winter-Jackets-For-Men.jpg" alt="Stylish Jacket">
+            <h3>Stylish Jacket</h3>
+            <p>High-quality jacket for a fashionable look.</p>
+            <div class="price">$99.99</div>
+            <button onclick="addToCart('Stylish Jacket', 99.99)">Add to Cart</button>
+        </div>
+    
+        <div class="product-item">
+            <img src="http://2.bp.blogspot.com/-b6yW_SE_ddI/U84TlX_klvI/AAAAAAAA7RY/nHz8kg4F_yI/s1600/1627.jpg" alt="Classic Shoes">
+            <h3>Classic Shoes</h3>
+            <p>Comfortable and stylish shoes.</p>
+            <div class="price">$89.99</div>
+            <button onclick="addToCart('Classic Shoes', 89.99)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="https://i.etsystatic.com/9408353/r/il/d0149a/1759986402/il_fullxfull.1759986402_fcc5.jpg" alt="Leather Wallet">
+            <h3>Leather Wallet</h3>
+            <p>Sleek design with multiple compartments.</p>
+            <div class="price">$49.99</div>
+            <button onclick="addToCart('Leather Wallet', 49.99)">Add to Cart</button>
+        </div>
+    
+        <div class="product-item">
+            <img src="https://www.indabaa.com/wp-content/uploads/2020/06/feat-1068x601.jpg" alt="Smartwatch">
+            <h3>Smartwatch</h3>
+            <p>Track your fitness and stay connected.</p>
+            <div class="price">$129.99</div>
+            <button onclick="addToCart('Smartwatch', 129.99)">Add to Cart</button>
+        </div>
+    </div>
+    
+    <!-- Newsletter Signup Section -->
+    <section class="newsletter-section" id="newsletter">
+        <div class="container">
+            <h2>Join Our Newsletter</h2>
+            <p>Be the first to know about our latest collections, special offers, and more. Subscribe today!</p>
+            <form class="signup-form" action="#">
+                <input type="email" placeholder="Enter your email" required>
+                <input type="submit" value="Subscribe">
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FashionBrand. All Rights Reserved.</p>
+            <p><a href="#privacy-policy">Privacy Policy</a> | <a href="#terms-of-service">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+
+        function addToCart(productName, price) {
+            cartCount++;
+            document.getElementById('cart-button').innerText = `Cart (${cartCount})`;
+            alert(`${productName} has been added to your cart!`);
+        }
+    </script>
+</body>
+</html>
+
