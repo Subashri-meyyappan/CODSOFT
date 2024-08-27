@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0c0c0c;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+
+        nav {
+            background-color: #1f1f1f;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-section {
+            background-image: linear-gradient(to bottom right, rgba(0, 155, 160, 0.8), rgba(0, 0, 0, 0.8)), url('bg1.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px;
+            color: #ffffff;
+            margin-top: 40px;
+        }
+
+        .profile-section img {
+            border-radius: 50%;
+            margin-right: 50px;
+            border: 5px solid #009ba0;
+        }
+
+        .profile-section h3 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .profile-section p {
+            margin: 5px 0;
+            font-size: 20px;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #00bcd4;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .section-title:after {
+            content: '';
+            display: -moz-grid;
+            width: 60px;
+            height: 4px;
+            background-color: #00bcd4;
+            margin: 0 auto;
+            position: -ms-page;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-20%);
+        }
+
+        #about {
+            text-align: center;
+            min-height: 30vh;
+        }
+
+        #projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .pro-card {
+            padding: 10px; 
+            margin-bottom: 15px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pro-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .pro-card h3 {
+            color: #00bcd4;
+            margin-bottom: 15px;
+        }
+
+        .pro-card ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #ccc;
+        }
+
+        #skills {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .skills-content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill-bar {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .skill-bar span {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .progress {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #009ba0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(-90deg);
+            transform-origin: center;
+        }
+
+        .progress:before {
+            content: '';
+            display: block;
+            width: 80%;
+            height: 80%;
+            background-color: #1e1e1e;
+            border-radius: 50%;
+            margin: 10% auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .java {
+            clip-path: polygon(0 0, 45% 0, 45% 100%, 0% 100%);
+        }
+
+        .html {
+            clip-path: polygon(0 0, 80% 0, 80% 100%, 0% 100%);
+        }
+
+        .css {
+            clip-path: polygon(0 0, 70% 0, 70% 100%, 0% 100%);
+        }
+
+        .javascript {
+            clip-path: polygon(0 0, 60% 0, 60% 100%, 0% 100%);
+        }
+
+        .certification-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        #contact {
+            text-align: center;
+        }
+
+        #form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        #form input[type="text"],
+        #form input[type="tel"],
+        #form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        #form input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background-color: #00bcd4;
+            color: #ffffff;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #form input[type="submit"]:hover {
+            background-color: #009ba0;
+        }
+
+        #social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            gap: 30px;
+        }
+
+        #social-links img {
+            width: 40px;
+            transition: transform 0.3s;
+        }
+
+        #social-links img:hover {
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#soft-skills">Soft Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="profile-section">
+        <img src="https://www.vhv.rs/dpng/d/426-4264903_user-avatar-png-picture-avatar-profile-dummy-transparent.png" alt="Profile Image" width="200" height="200">
+        <div>
+            <h3>M SUBASHRI</h3>
+            <p>Frontend Developer | Tech Innovator</p>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>I am a passionate Frontend Developer with a keen eye for detail and a strong drive for crafting visually appealing and highly functional web applications. With a solid foundation in HTML, CSS, and JavaScript, I specialize in creating responsive, user-friendly interfaces that provide an exceptional user experience.
+           </p><br></b> <a href="resume.html" class="resume-button" target="_blank" style="color: #009ba0;">View My Resume</a>
+           <br>
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="pro-card">
+            <h2>Projects</h2>
+            
+<div class="project">
+    <h3>Project 1: Smart Traffic Management System</h3>
+    <p>Developed a system to optimize urban traffic flow using real-time data analysis and AI. Leveraged Python, TensorFlow, and IoT devices to reduce congestion and improve commute times by dynamically adjusting traffic signals and providing real-time driver updates.</p>
+
+<div class="project">
+    <h3>Project 2: Personal Portfolio Website</h3>
+    <p>Created a responsive portfolio website to showcase my skills and projects as a Full Stack Developer. Built with HTML, CSS, and JavaScript, focusing on clean design and user-friendly navigation to effectively communicate my expertise and brand.</p>
+</div>
+
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-content">
+            <div class="skill-bar">
+                <span>Java</span>
+                <div class="progress java"></div>
+            </div>
+            <div class="skill-bar">
+                <span>HTML</span>
+                <div class="progress html"></div>
+            </div>
+            <div class="skill-bar">
+                <span>CSS</span>
+                <div class="progress css"></div>
+            </div>
+            <div class="skill-bar">
+                <span>JavaScript</span>
+                <div class="progress javascript"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <div class="certification-card" onclick="window.open('https://onlinecourses.nptel.ac.in/noc24_cs04/announcements?force=true', '_blank');">
+            <h3>NPTEL</h3>
+            <p>Privacy and Security in Social Media</p>
+        </div><br>
+
+        <div class="certification-card" onclick="window.open('https://onlinecourses.nptel.ac.in/noc22_cs84', '_blank');">
+            <h3>NPTEL</h3>
+            <p>Design & Implementation of Human-Computer Interfaces</p>
+        </div><br>
+
+        <div class="certification-card" onclick="window.open('https://www.mygreatlearning.com/ai-basics-for-beginners', '_blank');">
+            <h3>Great Learning</h3>
+            <p>Introduction to AI</p>
+        </div><br>
+
+        <div class="certification-card" onclick="window.open('https://www.mygreatlearning.com/sql-for-beginners', '_blank');">
+            <h3>Great Learning</h3>
+            <p>SQL Project for Beginners</p>
+        </div><br>
+
+        <div class="certification-card" onclick="window.open('https://springboard.infosys.com/learn', '_blank');">
+            <h3>Infosys Springboard</h3>
+            <p>Database Management System</p>
+        </div><br><br>
+    </section>
+
+
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div id="form">
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <input type="submit" value="Send">
+            </form>
+        </div>
+        <div id="social-links">
+            <a href="#"><img src="https://as2.ftcdn.net/v2/jpg/03/85/94/91/1000_F_385949189_W1ydL4Z3c6Uy2OfB9rZNdbxVaIMOs16F.jpg" alt="GitHub"></a>
+            <a href="#"><img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG39.png" alt="LinkedIn"></a>
+            <a href="#"><img src="https://tse2.mm.bing.net/th?id=OIP.QP0jsw6idYMNkD-K3Pas2AHaHa&pid=Api&P=0&h=180" alt="Mail"></a>
+        </div>
+    </section>
+</body>
+</html>
